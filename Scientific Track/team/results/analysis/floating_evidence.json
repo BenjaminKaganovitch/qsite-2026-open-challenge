@@ -1,0 +1,18 @@
+{
+ "kappa0.75_N8_qstar_jumps_h": [],
+ "kappa0.75_N8_min_gap": 1.347687428143729e-05,
+ "kappa0.75_N10_qstar_jumps_h": [],
+ "kappa0.75_N10_min_gap": 0.009814992027779468,
+ "kappa0.75_N12_qstar_jumps_h": [
+  0.4788125000000001
+ ],
+ "kappa0.75_N12_min_gap": 5.709183525937078e-08,
+ "kappa0.9_N8_qstar_jumps_h": [],
+ "kappa0.9_N8_min_gap": 7.77746574431859e-06,
+ "kappa0.9_N10_qstar_jumps_h": [],
+ "kappa0.9_N10_min_gap": 0.009735846480896093,
+ "kappa0.9_N12_qstar_jumps_h": [
+  1.0623500000000001
+ ],
+ "kappa0.9_N12_min_gap": 2.280003030818989e-08
+}

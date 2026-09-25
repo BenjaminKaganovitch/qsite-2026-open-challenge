@@ -1,0 +1,12 @@
+{
+ "max_relE": 0.06704967420920419,
+ "median_relE": 3.868102164902152e-05,
+ "frac_F_below_0.9": 0.014568158168574402,
+ "median_1mF": 5.332276597558305e-05,
+ "max_dSq": 3.284183942300149,
+ "median_dSq": 0.0031664457600806273,
+ "label_disagreement_count": 11,
+ "label_disagreement_frac": 0.011446409989594173,
+ "p0_mixed_vs_pure_note": "p=0 row uses exact pure circuit state; default.mixed p=0 agreement validated to 3e-14 in circuit_validation.json",
+ "branch_disagreement_max": 6.156704255433931
+}

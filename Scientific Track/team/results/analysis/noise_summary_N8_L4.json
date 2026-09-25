@@ -1,0 +1,95 @@
+{
+ "contraction_p0.01": {
+  "median": 0.600808497388946,
+  "p10": 0.4949107118486504,
+  "p90": 0.7048045718558456
+ },
+ "frac_ED_ferro_kept_p0.01": 0.0,
+ "frac_ED_ferro_kept_parityver_p0.01": 0.11971830985915492,
+ "frac_ED_antiphase_kept_p0.01": 0.45864661654135336,
+ "frac_ED_antiphase_kept_parityver_p0.01": 0.6917293233082706,
+ "frac_ED_paramagnet_kept_p0.01": 0.8887262079062958,
+ "frac_ED_paramagnet_kept_parityver_p0.01": 0.9370424597364568,
+ "accept_parity_p0.01_median": 0.7117772039221536,
+ "purity_p0.01_median": 0.15903515642772628,
+ "mx_ratio_p0.01_median_para": 0.6991627834085227,
+ "contraction_p0.05": {
+  "median": 0.08509612787041572,
+  "p10": 0.03899866089273858,
+  "p90": 0.16569405606431065
+ },
+ "frac_ED_ferro_kept_p0.05": 0.0,
+ "frac_ED_ferro_kept_parityver_p0.05": 0.0,
+ "frac_ED_antiphase_kept_p0.05": 0.0,
+ "frac_ED_antiphase_kept_parityver_p0.05": 0.0,
+ "frac_ED_paramagnet_kept_p0.05": 0.0,
+ "frac_ED_paramagnet_kept_parityver_p0.05": 0.0,
+ "accept_parity_p0.05_median": 0.5060439895973744,
+ "purity_p0.05_median": 0.004743207205173005,
+ "mx_ratio_p0.05_median_para": 0.16224578590473182,
+ "frac_ED_ferro_kept_p0.0": 0.9929577464788732,
+ "frac_ED_antiphase_kept_p0.0": 0.9849624060150376,
+ "frac_ED_paramagnet_kept_p0.0": 0.9897510980966325,
+ "ratio_label_counts": {
+  "0.0": [
+   153,
+   140,
+   668
+  ],
+  "0.01": [
+   159,
+   157,
+   645
+  ],
+  "0.05": [
+   231,
+   369,
+   361
+  ]
+ },
+ "ratio_label_agreement_with_ED_ratio": {
+  "0.0": 0.9906347554630593,
+  "0.01": 0.9729448491155047,
+  "0.05": 0.6795005202913632
+ },
+ "label_counts": {
+  "0.0": [
+   141,
+   137,
+   677,
+   6
+  ],
+  "0.01": [
+   0,
+   61,
+   608,
+   292
+  ],
+  "0.05": [
+   0,
+   0,
+   0,
+   961
+  ]
+ },
+ "label_counts_parity_verified": {
+  "0.0": [
+   141,
+   137,
+   677,
+   6
+  ],
+  "0.01": [
+   17,
+   94,
+   643,
+   207
+  ],
+  "0.05": [
+   0,
+   0,
+   0,
+   961
+  ]
+ }
+}

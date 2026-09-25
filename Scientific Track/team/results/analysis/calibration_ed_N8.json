@@ -1,0 +1,16 @@
+{
+ "T_order": 0.5414484146077675,
+ "T_mx": 0.4901264808326204,
+ "anchor_medians": {
+  "order_ordered": 0.998620503021382,
+  "order_para": 0.08427632619415296,
+  "mx_ordered": 0.03714249572954419,
+  "mx_para": 0.9431104659356966
+ },
+ "anchor_counts": {
+  "ferro": 28,
+  "antiphase": 14,
+  "para": 124
+ },
+ "anchor_rule": "ferro kappa<=0.2&h<=0.2; antiphase kappa>=0.8&h<=0.1; para h>=1.8; thresholds = midpoints of anchor medians"
+}

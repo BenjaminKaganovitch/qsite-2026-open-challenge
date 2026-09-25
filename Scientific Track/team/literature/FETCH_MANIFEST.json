@@ -1,0 +1,211 @@
+{
+  "access_date": "2026-09-25",
+  "items": [
+    {
+      "id": "bcf06",
+      "url": "https://arxiv.org/pdf/cond-mat/0511658",
+      "filename": "bcf06.pdf",
+      "sha256": "e146b6a6d3eda3eb64e37a8af88dadf2bd0fa74faea4105a68733d04a2093055",
+      "bytes": 152903
+    },
+    {
+      "id": "bcf07",
+      "url": "https://arxiv.org/pdf/cond-mat/0702676",
+      "filename": "bcf07.pdf",
+      "sha256": "a62325916165c55c4454f17302df53f41ed8ef617f5fbf60a0b69ea98e1eef0b",
+      "bytes": 278172
+    },
+    {
+      "id": "chandra",
+      "url": "https://arxiv.org/pdf/cond-mat/0612144",
+      "filename": "chandra.pdf",
+      "sha256": "01d3ea2cee0f7193e0a9aa843f7bc8ffa9c4426e9c22e45a3b72dc1ddcd7f930",
+      "bytes": 210895
+    },
+    {
+      "id": "monaco",
+      "url": "https://arxiv.org/pdf/2208.08748",
+      "filename": "monaco.pdf",
+      "sha256": "da81cbf86ef18d73a8cc4be1e8b4c2515a97c81756f2644660cf35a8d0691231",
+      "bytes": 1052892
+    },
+    {
+      "id": "cea",
+      "url": "https://arxiv.org/pdf/2402.11022",
+      "filename": "cea.pdf",
+      "sha256": "557e7e8ce97d4402d125acab1af02dda66911646e3a2f42b803831ac588ab901",
+      "bytes": 2539609
+    },
+    {
+      "id": "zanardi",
+      "url": "https://arxiv.org/pdf/quant-ph/0512249",
+      "filename": "zanardi.pdf",
+      "sha256": "c1b3d4a231b29cf2cd1f600c711bce2480eb78a8d98640d94d3567e17f0c060b",
+      "bytes": 610339
+    },
+    {
+      "id": "gu",
+      "url": "https://arxiv.org/pdf/0811.3127",
+      "filename": "gu.pdf",
+      "sha256": "0c77b053e7be1821f2807cf943de3e8dd9b9df68cce059ccb5a353704cfc2f61",
+      "bytes": 1468581
+    },
+    {
+      "id": "cardy",
+      "url": "https://arxiv.org/pdf/hep-th/0405152",
+      "filename": "cardy.pdf",
+      "sha256": "36d4c72353ed82ecd5958ec60d52d82b9696e2955c8e85ebf55d407ddbff414f",
+      "bytes": 330386
+    },
+    {
+      "id": "wang",
+      "url": "https://arxiv.org/pdf/2007.14384",
+      "filename": "wang.pdf",
+      "sha256": "32c9cf4a09b8a6cc619861d42740feb63a624948359f4edcee2601e704521a4c",
+      "bytes": 1530597
+    },
+    {
+      "id": "temme",
+      "url": "https://arxiv.org/pdf/1612.02058",
+      "filename": "temme.pdf",
+      "sha256": "1bb069492859f97df6674a403f0f1bbc0b7d979ad5cbb3483ac2eded787886e2",
+      "bytes": 577425
+    },
+    {
+      "id": "li",
+      "url": "https://arxiv.org/pdf/1611.09301",
+      "filename": "li.pdf",
+      "sha256": "da22e24754fe8215ce95e0ba9b9002155bf573d790feb5a174a8356be231a3c8",
+      "bytes": 2755312
+    },
+    {
+      "id": "bonet",
+      "url": "https://arxiv.org/pdf/1807.10050",
+      "filename": "bonet.pdf",
+      "sha256": "850e8715ad6f3b68f4c88911291c354e77ae7eb3dd5dc73dd31ee12ecad6cfd7",
+      "bytes": 639658
+    },
+    {
+      "id": "franca",
+      "url": "https://arxiv.org/pdf/2009.05532",
+      "filename": "franca.pdf",
+      "sha256": "98e3003df3ca1ae58f6d89211bb276f2db1bb0bd7570c34aaaa1d6011839621e",
+      "bytes": 860014
+    },
+    {
+      "id": "sandvik",
+      "url": "https://arxiv.org/pdf/1101.3281",
+      "filename": "sandvik.pdf",
+      "sha256": "00c6d3be137b1eab1b5dd2bbb6a8825504c5351c3476df4612eb829bb55231dd",
+      "bytes": 2257070
+    },
+    {
+      "id": "quspin",
+      "url": "https://www.scipost.org/SciPostPhys.2.1.003/pdf",
+      "filename": "quspin.pdf",
+      "sha256": "2e12565976c4d6d393d0126ccb517d69aa576f072924a43110d23c7a22032ba5",
+      "bytes": 466481
+    },
+    {
+      "id": "annni",
+      "url": "https://raw.githubusercontent.com/PennyLaneAI/qml/master/demonstrations_v2/tutorial_annni/demo.py",
+      "filename": "annni.py",
+      "sha256": "dcddb8d914e4f4ba51519a2098b5d8972fb4e300f162db8ec1b8ff1f167f655b",
+      "bytes": 29721
+    },
+    {
+      "id": "transitions",
+      "url": "https://raw.githubusercontent.com/PennyLaneAI/qml/master/demonstrations_v2/tutorial_quantum_phase_transitions/demo.py",
+      "filename": "transitions.py",
+      "sha256": "2667ba726d10a015015e8594813ca2671542f716f4601d59b3717351e290ad0a",
+      "bytes": 29446
+    },
+    {
+      "id": "spin",
+      "url": "https://raw.githubusercontent.com/PennyLaneAI/qml/master/demonstrations_v2/tutorial_how_to_build_spin_hamiltonians/demo.py",
+      "filename": "spin.py",
+      "sha256": "110b2aad2bc72ee792df9ed9335687f808ee3cc587f02c7eb25cd18ea8f60de0",
+      "bytes": 19083
+    },
+    {
+      "id": "heisenberg",
+      "url": "https://pennylane.ai/challenges/heisenberg_model",
+      "filename": "heisenberg.html",
+      "sha256": "3b63525ea27adc7b9a3dbdeec4f802116779932ec3bbdf7b90f5546047244776",
+      "bytes": 123999
+    },
+    {
+      "id": "depolarizing",
+      "url": "https://docs.pennylane.ai/en/stable/code/api/pennylane.DepolarizingChannel.html",
+      "filename": "depolarizing.html",
+      "sha256": "a129353754db87111562da5fd6ed44e08b615642559c37416d3f39532092da7d",
+      "bytes": 310639
+    },
+    {
+      "id": "mixed",
+      "url": "https://docs.pennylane.ai/en/stable/code/api/pennylane.devices.default_mixed.DefaultMixed.html",
+      "filename": "mixed.html",
+      "sha256": "83a5056ec1f4773c5d785d6e87b384708ba0787dc8706f4335948f82ee064607",
+      "bytes": 266657
+    },
+    {
+      "id": "diff",
+      "url": "https://docs.pennylane.ai/en/stable/introduction/interfaces.html",
+      "filename": "diff.html",
+      "sha256": "d972f5776542307d2a2e217fa3aa1cdde023cdd926342e846d7eb29d95cb6f06",
+      "bytes": 261674
+    },
+    {
+      "id": "peschel",
+      "url": "https://link.springer.com/content/pdf/10.1007/BF01297524.pdf",
+      "filename": "peschel.html",
+      "sha256": "58429a9b4c7b7638f3a2f5a1a3a86fb7a306703e4ea7a423e44a323eea4319d6",
+      "bytes": 254147
+    },
+    {
+      "filename": "default_mixed_0441.py",
+      "url": "https://raw.githubusercontent.com/PennyLaneAI/pennylane/v0.44.1/pennylane/devices/default_mixed.py",
+      "sha256": "6b7554286ffcf59e3a46449483008771b10f6fd78e985183f00805f7e35376dd",
+      "bytes": 13178
+    },
+    {
+      "filename": "channel_0441.py",
+      "url": "https://raw.githubusercontent.com/PennyLaneAI/pennylane/v0.44.1/pennylane/ops/channel.py",
+      "sha256": "e97c663db5928c0028d3b73309495c8209a2f36fc5e5cd5081590ec19a68cac3",
+      "bytes": 33907
+    },
+    {
+      "filename": "cern.tar.gz",
+      "url": "https://github.com/CERN-QTI/Quantum-Phase-Detection-ANNNI/tree/4d242420601ef446d3f0501b6c07406a88ceed8b",
+      "sha256": "2ed9d4e1666fd6179c9da3399a5ad1c9dbb3ccace4df245e303134a2bd00eeda",
+      "bytes": 420503
+    },
+    {
+      "filename": "interfaces_0441.rst",
+      "url": "https://raw.githubusercontent.com/PennyLaneAI/pennylane/v0.44.1/doc/introduction/interfaces.rst",
+      "sha256": "1b2b80e0711e2540ff87f0c507cd9ccd03de0b2240930c755974698d472dbeb7",
+      "bytes": 39021
+    },
+    {
+      "id": "cern_zenodo",
+      "url": "https://zenodo.org/api/records/7090343",
+      "filename": "cern_zenodo.json",
+      "sha256": "797f7f64ca1e891fbffcc9d71743417110ab5b8dc23986db874e4d2ef294d8f5",
+      "bytes": 4233
+    },
+    {
+      "id": "cern_releases",
+      "url": "https://api.github.com/repos/CERN-QTI/Quantum-Phase-Detection-ANNNI/releases?per_page=100",
+      "filename": "cern_releases.json",
+      "sha256": "fc9c8710c666ddfe9a4d42238c88bee5e63892e8cf79c73c362c8223c83fd987",
+      "bytes": 8720
+    },
+    {
+      "id": "cern_v1",
+      "url": "https://zenodo.org/api/records/7090343/files/SaverioMonaco/Quantum-Phase-Detection-ANNNI-v1.0.0.zip/content",
+      "filename": "cern_v1.zip",
+      "sha256": "9eefb8b6176005a718be838d978c9f6c3cab4c2255cb1796464858000d1f71a9",
+      "bytes": 33889192
+    }
+  ]
+}

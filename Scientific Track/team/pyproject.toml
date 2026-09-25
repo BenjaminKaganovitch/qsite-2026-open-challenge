@@ -1,0 +1,18 @@
+[project]
+name = "qsite-annni-team"
+version = "0.1.0"
+description = "Team environment for the Q-SITE 2026 Scientific Track (ANNNI under noise). Extends ../pyproject.toml with explicit analysis deps."
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "pennylane==0.44.1",
+    "numpy>=2.3,<3",
+    "scipy>=1.16",
+    "matplotlib>=3.10,<4",
+    "networkx>=3.5,<4",
+    "jupyterlab>=4.4,<5",
+    "nbconvert>=7.16",
+    "ipykernel>=6.29",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,442 @@
+{
+  "source": "https://zenodo.org/records/7090343",
+  "version": "v1.0.0",
+  "inspection": "ZIP inventory; pickle opcodes inspected without deserialization; numerical data not validated",
+  "entries": [
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/.gitignore",
+      "bytes": 2042,
+      "crc32": "7f5a4926"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/LICENSE.md",
+      "bytes": 1071,
+      "crc32": "df429b30"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/README.md",
+      "bytes": 990,
+      "crc32": "9c44bcaa"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/12classification.svg",
+      "bytes": 64759,
+      "crc32": "1ef7128f"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/6classification.svg",
+      "bytes": 69099,
+      "crc32": "2e7e358b"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N12n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100_110_120_130_140_150_160_170_180_190/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N12n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100_110_120_130_140_150_160_170_180_190/gaussian/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N12n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100_110_120_130_140_150_160_170_180_190/gaussian/mean_acc",
+      "bytes": 538,
+      "crc32": "cb08b2e5"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N12n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100_110_120_130_140_150_160_170_180_190/gaussian/std_acc",
+      "bytes": 538,
+      "crc32": "9583890c"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N12n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100_110_120_130_140_150_160_170_180_190/uniform/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N12n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100_110_120_130_140_150_160_170_180_190/uniform/mean_acc",
+      "bytes": 538,
+      "crc32": "a9dd0474"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N12n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100_110_120_130_140_150_160_170_180_190/uniform/std_acc",
+      "bytes": 538,
+      "crc32": "6752dc48"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N6n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N6n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100/gaussian/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N6n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100/gaussian/mean_acc",
+      "bytes": 367,
+      "crc32": "379473f5"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N6n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100/gaussian/std_acc",
+      "bytes": 367,
+      "crc32": "bf61b2e6"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N6n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100/uniform/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N6n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100/uniform/mean_acc",
+      "bytes": 367,
+      "crc32": "5e982d2d"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/N6n100sizes2_4_6_8_10_20_30_40_50_60_70_80_90_100/uniform/std_acc",
+      "bytes": 367,
+      "crc32": "2b191042"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/accuracies/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/accuracies/12.svg",
+      "bytes": 54842,
+      "crc32": "3ebdd2c1"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/accuracies/6.svg",
+      "bytes": 54210,
+      "crc32": "0535522e"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/encoder/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/encoder/12autoencoder.svg",
+      "bytes": 59419,
+      "crc32": "f2607699"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/encoder/6autoencoder.svg",
+      "bytes": 60377,
+      "crc32": "75bc5f34"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/accuracy10.svg",
+      "bytes": 63085,
+      "crc32": "9a3e871a"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/accuracy12.svg",
+      "bytes": 62745,
+      "crc32": "76329d29"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/accuracy4.svg",
+      "bytes": 31561,
+      "crc32": "94ecba8d"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/accuracy6.svg",
+      "bytes": 59679,
+      "crc32": "1cedc064"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/accuracy8.svg",
+      "bytes": 65353,
+      "crc32": "2620df9c"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification10.svg",
+      "bytes": 75186,
+      "crc32": "23978bef"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification12.svg",
+      "bytes": 68442,
+      "crc32": "3966d58d"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification4.svg",
+      "bytes": 62231,
+      "crc32": "2cbe17e9"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification6.svg",
+      "bytes": 70485,
+      "crc32": "dc3c5292"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification8.svg",
+      "bytes": 75403,
+      "crc32": "c7356f52"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification_hardthr10.svg",
+      "bytes": 27406,
+      "crc32": "c6fa3e17"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification_hardthr12.svg",
+      "bytes": 27614,
+      "crc32": "140d6337"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification_hardthr4.svg",
+      "bytes": 27823,
+      "crc32": "d536440d"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification_hardthr6.svg",
+      "bytes": 27961,
+      "crc32": "6135bb74"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/plots/ANNNI/classification_hardthr8.svg",
+      "bytes": 28091,
+      "crc32": "feb9610d"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/N10n100",
+      "bytes": 55856200,
+      "crc32": "bebc6e8e"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/N12n100",
+      "bytes": 63867675,
+      "crc32": "92799f10"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/N4n100",
+      "bytes": 19761940,
+      "crc32": "0439279b"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/N6n10",
+      "bytes": 284990,
+      "crc32": "c4c5d86e"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/N6n100",
+      "bytes": 32493509,
+      "crc32": "513cc6c7"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/N8n100",
+      "bytes": 44594937,
+      "crc32": "16e750e4"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/ring/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/ring/N10n100",
+      "bytes": 61977037,
+      "crc32": "b5d3aeda"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/ring/N6n100",
+      "bytes": 38134220,
+      "crc32": "368d7719"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/ANNNI/ring/N8n100",
+      "bytes": 50055630,
+      "crc32": "e9f67323"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/standard/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/data/vqes/standard/N8n100",
+      "bytes": 335154,
+      "crc32": "51c72e6a"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/Makefile",
+      "bytes": 638,
+      "crc32": "611f864d"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/make.bat",
+      "bytes": 804,
+      "crc32": "e5d3f70f"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/source/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/source/PhaseEstimation.rst",
+      "bytes": 1811,
+      "crc32": "574aac81"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/source/conf.py",
+      "bytes": 2028,
+      "crc32": "61a9d1d5"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/source/index.rst",
+      "bytes": 491,
+      "crc32": "b53b097c"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/source/modules.rst",
+      "bytes": 82,
+      "crc32": "a99ed936"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/docs/source/setup.rst",
+      "bytes": 103,
+      "crc32": "6cbb7bb6"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/notebooks/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/notebooks/encoderANNNI.ipynb",
+      "bytes": 155847,
+      "crc32": "6375b766"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/notebooks/low_points_training.ipynb",
+      "bytes": 151121,
+      "crc32": "eef40fbc"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/notebooks/qcnn.ipynb",
+      "bytes": 194325,
+      "crc32": "331387a9"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/notebooks/vqe.ipynb",
+      "bytes": 134509,
+      "crc32": "849f1080"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/",
+      "bytes": 0,
+      "crc32": "00000000"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/__init__.py",
+      "bytes": 113,
+      "crc32": "54c56dd5"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/annni_model.py",
+      "bytes": 4609,
+      "crc32": "e1968a83"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/circuits.py",
+      "bytes": 11680,
+      "crc32": "135395e0"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/encoder.py",
+      "bytes": 7395,
+      "crc32": "7bcc23b7"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/general.py",
+      "bytes": 5200,
+      "crc32": "aef573a8"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/hamiltonians.py",
+      "bytes": 913,
+      "crc32": "ae53aff2"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/ising_chain.py",
+      "bytes": 2932,
+      "crc32": "b9e58947"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/losses.py",
+      "bytes": 4476,
+      "crc32": "324d8158"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/qcnn.py",
+      "bytes": 14912,
+      "crc32": "4e5f97d6"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/visualization.py",
+      "bytes": 19934,
+      "crc32": "3d58180d"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/PhaseEstimation/vqe.py",
+      "bytes": 19663,
+      "crc32": "6221d3e8"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/mypy.ini",
+      "bytes": 37,
+      "crc32": "ec19a311"
+    },
+    {
+      "path": "SaverioMonaco-Quantum-Phase-Detection-ANNNI-f0ee370/src/setup.py",
+      "bytes": 653,
+      "crc32": "6e2d69ee"
+    }
+  ]
+}
