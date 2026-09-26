@@ -1,0 +1,82 @@
+{
+ "rule": "anchor medians (ferro kappa<=0.2&h<=0.2; antiphase kappa>=0.8&h<=0.1; para h>=1.8) applied to the circuit data at each p",
+ "ED": {
+  "T_order": 0.5414484146077675,
+  "T_mx": 0.4901264808326204,
+  "counts": [
+   142,
+   133,
+   683,
+   3
+  ]
+ },
+ "p0.0": {
+  "T_order": 0.5394419721974894,
+  "T_mx": 0.49127845976719703,
+  "anchor_medians": {
+   "order_ordered": 0.9946079520397014,
+   "order_para": 0.08427599235527736,
+   "mx_ordered": 0.03944488208899959,
+   "mx_para": 0.9431120374453945
+  },
+  "counts": [
+   142,
+   137,
+   676,
+   6
+  ],
+  "n_ferro": 142,
+  "agreement_with_ED": 0.9864724245577523,
+  "per_phase_kept": {
+   "ferro": 0.9929577464788732,
+   "antiphase": 0.9849624060150376,
+   "paramagnet": 0.9882869692532943
+  }
+ },
+ "p0.01": {
+  "T_order": 0.26558366449464965,
+  "T_mx": 0.3724387805707158,
+  "anchor_medians": {
+   "order_ordered": 0.47131251925730894,
+   "order_para": 0.05985480973199033,
+   "mx_ordered": 0.07654247110893973,
+   "mx_para": 0.6683350900324918
+  },
+  "counts": [
+   142,
+   151,
+   652,
+   16
+  ],
+  "n_ferro": 142,
+  "agreement_with_ED": 0.9614984391259105,
+  "per_phase_kept": {
+   "ferro": 0.9859154929577465,
+   "antiphase": 0.9849624060150376,
+   "paramagnet": 0.9531478770131772
+  }
+ },
+ "p0.05": {
+  "T_order": 0.0260446173250067,
+  "T_mx": 0.09356424736036152,
+  "anchor_medians": {
+   "order_ordered": 0.03782640827764136,
+   "order_para": 0.014262826372372042,
+   "mx_ordered": 0.023498390857340373,
+   "mx_para": 0.16363010386338267
+  },
+  "counts": [
+   106,
+   272,
+   451,
+   132
+  ],
+  "n_ferro": 106,
+  "agreement_with_ED": 0.6930280957336108,
+  "per_phase_kept": {
+   "ferro": 0.6408450704225352,
+   "antiphase": 0.9172932330827067,
+   "paramagnet": 0.6603221083455344
+  }
+ }
+}
