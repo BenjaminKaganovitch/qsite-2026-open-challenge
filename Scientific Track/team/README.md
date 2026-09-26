@@ -6,8 +6,8 @@
 | Notebook (regenerates every figure from cached arrays) | `notebooks/ANNNI_phase_diagram_under_noise.ipynb` |
 | Required diagrams, p = 0 / 0.01 / 0.05 (PNG + PDF) | `results/figures/phase_diagram_p0.0.*`, `phase_diagram_p0.01.*`, `phase_diagram_p0.05.*` |
 | Independent clean ED reference diagram | `results/figures/fig_ed_phase_N8.png`, `results/figures/fig_phase_diagrams_all.png` |
-| Report (2–3 pages) | `writeup/report.md` |
-| Slides and speaker notes | `writeup/slides.pdf`, `writeup/presentation_notes.md` |
+| Write-up (3 pages) | `writeup/report.pdf` (LaTeX source `writeup/report.tex`) |
+| Slides and speaker notes | `writeup/slides.pptx`, `writeup/slides.pdf`, `writeup/presentation_notes.md` |
 | Raw data (one `.npz` per κ row, metadata embedded) | `results/<scan_name>/row_iii.npz` |
 | Analysis tables and JSON summaries | `results/analysis/` |
 | Validation reports | `results/validation/` |
@@ -47,7 +47,11 @@ Every scan CLI takes `--rows a:b` (or a comma list) and writes `results/<scan>/r
 | ZNE points and first-order response | `python src/noisy_eval.py --mode extras` | ~80 s per row |
 | Seed check | `python src/vqe_scan.py --seed 777 --scan vqe_hva_N8_L4_31x31_seed777 --rows 3,6,9,12,18,21,24,27` then `python src/noisy_eval.py --mode numpy --source vqe_hva_N8_L4_31x31_seed777 --rows ...` | |
 | Channel-insertion response | `python src/insertion_response.py` | ~80 s per point |
-| Figures and tables | `python src/fig_clean.py; python src/fig_noise.py; python src/fig_mitigation.py; python src/fig_finite_size.py; python src/fig_seed.py` | < 1 min |
+| Figures and tables | `python src/fig_clean.py; python src/fig_noise.py; python src/fig_mitigation.py; python src/fig_finite_size.py; python src/fig_seed.py; python src/fig_depth.py; python src/fig_cluster.py; python src/fig_reopt.py; python src/recalibrate.py` | < 1 min |
+| Noise-aware re-optimisation (cuts) | `python src/reopt_scan.py --rows 6,9,21,24 --hstride 4 --maxiter 60` | ~1 min per point |
+| Quench dynamics | `python src/dynamics.py` | ~1 min |
+
+Cut scans, not full grids: `vqe_hva_N8_L{1,2,3}_31x31` and `noisy_np__vqe_hva_N8_L{1,2,3}_31x31` (κ rows 6, 9, 21, 24), `reopt_hva_N8_L4_31x31_s4` (the same four rows, every 4th h), and the `seed777` folders (rows 3, 6, 9, 12, 18, 21, 24, 27).
 
 Peak memory is under 200 MB per worker for N=8 density matrices; an N=12 density matrix alone is 256 MiB. Parallel workers (PowerShell):
 ```powershell

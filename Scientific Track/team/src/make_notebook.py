@@ -62,7 +62,7 @@ for scan, nr in [("ed_N8_pbc_31x31",31),("ed_N10_pbc_31x31",31),("ed_N12_pbc_31x
     print(f"{scan:32s} rows={len(metas)} version-sets={info['n_version_sets']} flagged-row-pairs={rep['flagged_row_pairs']} max/median jump={rep['max_row_jump']:.3f}/{rep['median_row_jump']:.3f}")""")
 md("The flagged row pairs all fall at κ ∈ [0.37, 0.5], where the low-field ferro→antiphase level crossing makes S(0) jump. The same pairs are flagged in the exact-diagonalisation scans, and rows were assigned to shards in an interleaved pattern, so the jumps are physical rather than shard artefacts. The noisy and extras scans show no flags away from κ≈0.5.")
 md("""## 3. Clean exact-diagonalisation reference (N=8, 31×31)
-I use sparse `eigsh` with k=6, warm-started along h, plus an independent cold start at every point. The maximum cold−warm energy difference is below 1e-13. When the ground state is degenerate within 1e-8·|E0|, observables are averaged equally over the degenerate subspace. Fidelity is computed between ground subspaces.
+Sparse `eigsh` is run with k=6, warm-started along h, plus an independent cold start at every point. The maximum cold−warm energy difference is below 1e-13. When the ground state is degenerate within 1e-8·|E0|, observables are averaged equally over the degenerate subspace. Fidelity is computed between ground subspaces.
 
 The thresholds are calibrated on **anchor regions that follow from the limiting cases, not from the overlay curves**: ferro at κ≤0.2 and h≤0.2, antiphase at κ≥0.8 and h≤0.1, and paramagnet at h≥1.8. Each threshold is the midpoint between the anchor medians.""")
 code(r"""import fig_clean; fig_clean.main()
@@ -89,7 +89,7 @@ print(" ".join(f"{c:>11s}" for c in cols))
 for r in rows[::3]: print(" ".join(f"{r[c]:>11s}" for c in cols))
 print(json.dumps(js("seed_uncertainty_N8_L4.json")["median_abs_seed_difference"], indent=1))
 show("fig_noise_cuts.png"); show("fig_contraction.png", 700)""")
-md("### Mechanism: exact first-order channel-insertion responses [S28]\nd⟨O⟩/dp at p=0 equals the sum over all 128 channel locations of Tr{O_g L_t(ρ_g)}. I evaluate every location separately and resolve the sum by layer. For comparison, the terminal-equivalent value with 16 target hits per site would be d ln O/dp = −8·16/3 ≈ −43 for pair correlators and −21 for m_x.")
+md("### Mechanism: exact first-order channel-insertion responses [S28]\nd⟨O⟩/dp at p=0 equals the sum over all 128 channel locations of Tr{O_g L_t(ρ_g)}. Every location is evaluated separately and the sum is resolved by layer. For comparison, the terminal-equivalent value with 16 target hits per site would be d ln O/dp = −8·16/3 ≈ −43 for pair correlators and −21 for m_x.")
 code(r"""ins = js("insertion_response_N8_L4.json")
 for name, v in ins.items():
     print(f"{name:34s} O_F,O_A,m_x={np.round(v['O_F,O_A,m_x (p=0)'],3)}  dlnO/dp={np.round(v['relative dlnO/dp'],1)}  by layer (dominant O)={ {k: np.round(x,1).tolist() for k,x in v['by_layer'].items()} }")""")
@@ -99,10 +99,15 @@ show("fig_finite_size_maps.png"); show("fig_finite_size_boundaries.png", 560); s
 md("""## 8. Error mitigation (fixed circuit parameters; p=0 truth held out of every fit)
 **ZNE:** the noise is scaled linearly (p → λp, λ = 1, 2, 3), with a composed-channel path also tested at p=0.05. Richardson extrapolation is applied to each correlator $C_{ij}$ and each $\\langle X_i\\rangle$, and $S(q)$ is rebuilt afterwards; labels are never extrapolated.
 
+**Exponential ZNE:** a two-point exponential extrapolation $C_0=C_1^2/C_2$ (λ = 1, 2; linear $2C_1-C_2$ where the two values differ in sign) is also applied to every $C_{ij}$ and to $m_x$. Its variance amplification is $4r^2+r^4$ with $r=C(p)/C(2p)$, reported below.
+
 **Parity verification:** with $P=\\prod X_i$ and target sector s=+1, the verified value is $\\langle O\\rangle_+=(\\langle O\\rangle+\\langle OP\\rangle)/(1+\\langle P\\rangle)$ [S21].""")
 code(r"""import fig_mitigation; fig_mitigation.main()
-show("fig_mitigation_diagrams.png"); show("fig_shift_prediction.png", 760)""")
-md("## 9. Phase B extensions: depth trade-off, unsupervised classifier, noise-aware re-optimisation\nThese extensions use exactly the same noise model. The **depth** study reruns the fixed-parameter protocol for L = 1–4 on four κ cuts. **k-means** (k=3) is applied to $(S(q)/N, m_x)$ without labels or curves, and the clusters are named from their centroids afterwards. **Re-optimisation** is a separate protocol that minimises $\\mathrm{Tr}(H\\rho_p)$ at each p, using an exact gradient through the channels.")
+show("fig_mitigation_diagrams.png"); show("fig_shift_prediction.png", 760)
+rc = js("recalibrated_thresholds.json")
+for k in ("p0.0", "p0.01", "p0.05"):
+    v = rc[k]; print(f"anchor rule re-applied at {k}: T={v['T_order']:.3f}, T_x={v['T_mx']:.3f}, ferro points={v['n_ferro']}, agreement with ED={v['agreement_with_ED']:.3f}")""")
+md("## 9. Extensions: depth trade-off, unsupervised classifier, noise-aware re-optimisation, dynamics\nThese extensions use exactly the same noise model. The **depth** study reruns the fixed-parameter protocol for L = 1–4 on four κ cuts. **k-means** (k=3) is applied to $(S(q)/N, m_x)$ without labels or curves, and the clusters are named from their centroids afterwards. **Re-optimisation** is a separate protocol that minimises $\\mathrm{Tr}(H\\rho_p)$ at each p, using an exact gradient through the channels.")
 code(r"""import fig_depth, fig_cluster, fig_reopt
 fig_depth.main(); show("fig_depth_tradeoff.png")
 fig_cluster.main(); show("fig_kmeans.png")
@@ -112,7 +117,7 @@ md("### Quench dynamics (corroboration only)\nThe ring starts in $|+\\rangle^N$ 
 code(r"""dyn = js("dynamics.json")
 for k, v in dyn.items(): print(f"{k:16s} max λ exact={v['max_rate_exact']:.3f}  Trotter err={v['max_trotter_err_rate']:.3f}  channel err (p=0.01)={v['max_channel_err_rate_p0.01']:.3f}")
 show("fig_dynamics.png", 800)""")
-md("## 10. Conclusions and limitations\nSee `team/writeup/report.md`. The main caveats: N=8–12 rings; overlays are approximate thermodynamic curves; the noisy maps describe prepared-state diagnostics, while the Hamiltonian spectrum itself is unchanged; the fixed-parameter protocol is used throughout, with reoptimisation left as an extension; ZNE fails at p=0.05 for this 128-CNOT circuit.")
+md("## 10. Conclusions and limitations\nThe write-up is `writeup/report.pdf` (source `writeup/report.tex`). The main caveats: N=8–12 rings; overlays are approximate thermodynamic curves; the noisy maps describe prepared-state diagnostics, while the Hamiltonian spectrum itself is unchanged; the full-grid maps use the fixed-parameter protocol, and noise-aware re-optimisation was run on four κ cuts (§9); at p=0.05 linear Richardson ZNE fails, while two-point exponential ZNE recovers the map only at the cost of a very large variance amplification (see `results/analysis/zne_exponential.json`).")
 nb["cells"] = C
 nb["metadata"]["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}
 out = Path(__file__).resolve().parent.parent / "notebooks" / "ANNNI_phase_diagram_under_noise.ipynb"
