@@ -40,7 +40,7 @@ code(r"""core = json.loads((RES/"validation"/"core_validation.json").read_text()
 circ = json.loads((RES/"validation"/"circuit_validation.json").read_text())
 for k in ["H_vs_starter_and_pennylane_maxabs","bond_counts_N8_periodic","eigsh_vs_dense_maxdE","eigsh_max_residual","eigsh_max_orth_err",
           "ferro_S0","cat_S0","antiphase_Spi2","plus_mx","mixed_mx","hI_0","starter_hI_0_bug"]: print(f"{k:38s} {core[k]}")
-for k in ["L4_state_vs_default.qubit","L4_adjoint_vs_fd","L4_p0.05_rho_vs_default.mixed","L4_p0_mixed_vs_pure","L4_cnots","L4_channels","L4_placement_ok",
+for k in ["L4_state_vs_default.qubit","L4_adjoint_vs_fd","L4_p0.05_rho_vs_default.mixed","L4_p0_mixed_vs_pure","L4_cnots","L4_channels","L4_placement_ok","HVA_L4_cnots","HVA_L4_channels","HVA_L4_p","HVA_L4_placement_ok",
           "terminal_p0.05_Sq_formula_err"]: print(f"{k:38s} {circ[k]}")
 import hva, circuits as cc
 g = np.random.default_rng(3).uniform(-1,1,(4,3))

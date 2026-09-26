@@ -42,6 +42,23 @@ for L in (2, 4):
     assert ncnot == n * L and nch == n * L and ok and only_after
     assert rep[f"L{L}_state_vs_default.qubit"] < 1e-10 and rep[f"L{L}_adjoint_vs_fd"] < 1e-6
     assert max(rep[f"L{L}_p{p}_rho_vs_default.mixed"] for p in (0.0, 0.01, 0.05)) < 1e-10
+# HVA ansatz actually used for the reported diagrams: tape check at N=8, L=4, p=0.05
+import hva
+g_hva = rng.uniform(-1, 1, (4, 3))
+tape = qml.workflow.construct_tape(hva.pennylane_qnode(8, 4, 0.05))(g_hva)
+ops = tape.operations
+n_cnot = sum(o.name == "CNOT" for o in ops)
+n_ch = sum(o.name == "DepolarizingChannel" for o in ops)
+chan_ok = all(i > 0 and ops[i - 1].name == "CNOT" and o.wires[0] == ops[i - 1].wires[1]
+              and abs(float(o.parameters[0]) - 0.05) < 1e-15
+              for i, o in enumerate(ops) if o.name == "DepolarizingChannel")
+every_cnot = all(i + 1 < len(ops) and ops[i + 1].name == "DepolarizingChannel" for i, o in enumerate(ops) if o.name == "CNOT")
+other_noise = [o.name for o in ops if o.name not in ("CNOT", "DepolarizingChannel", "Hadamard", "RZ", "RX")]
+ps = sorted({float(o.parameters[0]) for o in ops if o.name == "DepolarizingChannel"})
+rep["HVA_L4_cnots"] = n_cnot; rep["HVA_L4_channels"] = n_ch; rep["HVA_L4_p"] = ps
+rep["HVA_L4_placement_ok"] = bool(chan_ok and every_cnot and not other_noise)
+rep["HVA_L4_other_ops"] = other_noise
+assert n_cnot == 128 and n_ch == 128 and chan_ok and every_cnot and not other_noise and ps == [0.05]
 # terminal-channel benchmark [S28]: channel after final state on every site -> C_ij scale a^2
 th = rng.uniform(-np.pi, np.pi, (3, n)); rho = cc.density_matrix(th, n, 2, 0.0)
 o0 = ac.observables_rho(n, rho)
