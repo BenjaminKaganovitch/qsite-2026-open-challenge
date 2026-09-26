@@ -29,7 +29,7 @@ def slide(pdf, title, bullets=(), images=(), subtitle=None, img_boxes=None, text
         yy -= (0.058 if not indent else 0.05) + 0.034 * (len(lines) - 1) + 0.012
     for (path, box) in zip(images, img_boxes or []):
         ax = fig.add_axes(box); ax.imshow(mpimg.imread(FIG / path)); ax.axis("off")
-    fig.text(0.95, 0.03, "Q-SITE Hacks 2026 · Scientific Track · team/results/", fontsize=8, color=INK2, ha="right")
+    fig.text(0.95, 0.03, "https://github.com/BenjaminKaganovitch/qsite-2026-open-challenge", fontsize=8, color=INK2, ha="right")
     pdf.savefig(fig); plt.close(fig)
 
 
@@ -44,7 +44,7 @@ def main():
                "Floating phase: compatible signatures at N = 12, not resolved"],
               subtitle="Benjamin · Dimitri · Yan · Frederick",
               images=["fig_phase_diagrams_all.png"], img_boxes=[[0.05, 0.03, 0.9, 0.45]], text_box=(0.05, 0.5, 0.9, 0.3), fs=14)
-        slide(pdf, "Model, diagnostics and references",
+        slide(pdf, "Model, order parameters and reference curves",
               ["H = −Σ Z_iZ_{i+1} + κ Σ Z_iZ_{i+2} − h Σ X_i, Pauli ops, periodic ring",
                "Finite symmetric ground states have ⟨Z_i⟩ = 0 → use correlations",
                "S(q) = (1/N) Σ_ij e^{iq(i−j)} ⟨Z_iZ_j⟩ (C_ii = 1 kept)",
@@ -54,7 +54,7 @@ def main():
                "  Ising 2nd-order estimate (h_I(0)=1), lower PT fit, upper KT fit",
                "Thresholds calibrated on limiting-case anchors, not on the curves"],
               images=["fig_ed_observables_N8.png"], img_boxes=[[0.04, 0.04, 0.92, 0.28]], text_box=(0.05, 0.36, 0.9, 0.47), fs=13)
-        slide(pdf, "Method and validation",
+        slide(pdf, "Methods and validation",
               ["Sparse eigsh, k = 6, warm + independent cold start (ΔE < 1e-13)",
                "HVA: |+⟩ then 4 × [ZZ_nn, ZZ_nnn, X] rotations, 12 parameters",
                "  RY/CNOT ring stalled at 1–3 % energy error → switched",
@@ -63,7 +63,7 @@ def main():
                "Noise: 128 target channels; tape check; NumPy DM engine = default.mixed to 3e-14",
                "Sharded, resumable CLIs; every figure regenerated from .npz"],
               images=["fig_circuit_vs_ed.png"], img_boxes=[[0.04, 0.04, 0.92, 0.3]], text_box=(0.05, 0.38, 0.9, 0.45), fs=13)
-        slide(pdf, "Clean phase diagram and finite size",
+        slide(pdf, "Exact phase diagram and finite-size behaviour",
               ["Ferro–para boundary ≈ N-independent, tracks the Ising estimate",
                "  κ=0.2: χ_F peak 0.616 (N=8) → 0.629 (N=12); DMRG 0.639",
                "Antiphase boundary drifts down with N toward the KT fit",
@@ -71,7 +71,7 @@ def main():
                "N = 10 cannot host period 4: commensurability anomaly",
                "Floating: N=12 entropy peak near KT line, q* locked at π/2 → unresolved"],
               images=["fig_finite_size_boundaries.png", "fig_floating_cuts.png"], img_boxes=[[0.52, 0.45, 0.30, 0.42], [0.5, 0.06, 0.48, 0.37]], text_box=(0.05, 0.12, 0.43, 0.72), fs=13)
-        slide(pdf, "Noise: what shifts, by how much",
+        slide(pdf, "Effect of depolarising noise at p = 0.01 and 0.05",
               ["p=0.01: order contracts to 0.60 (median) of its clean value",
                "  ferro O_F(h→0) 1.00 → 0.37; antiphase O_A 1.00 → 0.59",
                "  fixed threshold: ferro 0 % kept, antiphase 46 %, para 89 %",
@@ -80,7 +80,7 @@ def main():
                "p=0.05: purity 0.0047 vs 0.0039 maximally mixed; all 'unpolarised'",
                "Noise does not change H: these are prepared-state diagnostics"],
               images=["fig_noise_cuts.png"], img_boxes=[[0.5, 0.18, 0.48, 0.62]], text_box=(0.05, 0.12, 0.43, 0.72), fs=13)
-        slide(pdf, "Why: exact channel-insertion response",
+        slide(pdf, "Channel-insertion analysis of noise sensitivity",
               ["d⟨O⟩/dp = Σ_g Tr{O_g L_t(ρ_g)} over all 128 channel locations [S28]",
                "d ln O/dp: ferro −99, antiphase −69, m_x (para) −32…−48",
                "  terminal-noise equivalent (16 hits/site): −43 for pair correlators",
@@ -89,7 +89,7 @@ def main():
                "First-order −p∂_pO/∂_hO has the right sign; measured shifts 1.5–4× larger (nonlinear)",
                "Robustness ranking (ferro weakest) is circuit- and diagnostic-specific"],
               images=["fig_shift_prediction.png"], img_boxes=[[0.5, 0.25, 0.48, 0.45]], text_box=(0.05, 0.12, 0.43, 0.72), fs=13)
-        slide(pdf, "Depth, re-optimisation, second classifier",
+        slide(pdf, "Circuit depth, re-optimisation and clustering",
               ["Same experiment for HVA depth L = 1…4 (32 CNOTs per layer) on four κ cuts",
                "Clean error falls with L; noise error rises with L",
                "  best L at p=0.01: 3 (ferro), 2 (antiphase); at p=0.05: 1–2",
@@ -98,8 +98,8 @@ def main():
                "Noise-aware re-optimisation (min Tr Hρ_p): energy drops 0.2–1.0, order moves ≤ 0.03",
                "  optimiser buys energy via m_x by leaving the ground state: energy-optimal ≠ diagnostic-optimal",
                "k-means on (S(q)/N, m_x), no labels: 99.1 % agreement with rule labels (consistency)"],
-              images=["fig_depth_tradeoff.png"], img_boxes=[[0.04, 0.03, 0.92, 0.34]], text_box=(0.05, 0.40, 0.9, 0.45), fs=12)
-        slide(pdf, "Error mitigation",
+              images=["fig_depth_tradeoff.png"], img_boxes=[[0.12, 0.07, 0.76, 0.29]], text_box=(0.05, 0.41, 0.9, 0.45), fs=12)
+        slide(pdf, "Error mitigation by extrapolation and parity checks",
               ["ZNE: Richardson on each C_ij and ⟨X_i⟩ at λp, λ = 1, 2, 3; p=0 held out",
                "  p=0.01: |ΔC_ij| 0.063 → 0.011, labels 70 % → 98 %, |δh| ≤ 0.09",
                "  cost: variance × 19;  p=0.05: fails (signal ~1 %)",
@@ -107,7 +107,7 @@ def main():
                "  |ΔC_ij| 0.063 → 0.053: most errors stay in the even sector",
                "Mitigation cannot fix finite-N physics or ansatz bias"],
               images=["fig_mitigation_diagrams.png"], img_boxes=[[0.04, 0.04, 0.92, 0.33]], text_box=(0.05, 0.4, 0.9, 0.43), fs=13)
-        slide(pdf, "Take-aways and limitations",
+        slide(pdf, "Conclusions and limitations",
               ["Accurate clean diagram on 8–12-site rings; ferro side converged, antiphase side drifting to KT",
                "For a circuit good enough to represent these ground states (128 CNOTs):",
                "  p = 0.01 removes absolute order (ferro first) while boundary positions stay put",
@@ -115,7 +115,7 @@ def main():
                "ZNE turns p = 0.01 back into a correct diagram; parity checks help little",
                "Quench dynamics (Trotter from |+⟩): Loschmidt-rate peaks only for quenches deep into the ordered side (h ≤ 0.4); channel error at p=0.01 (≈0.28) exceeds the Trotter error (≤0.035)",
                "Limits: N ≤ 12, approximate overlays, κ≈0.5 masked, fixed-parameter protocol only, no shot noise",
-               "All code, data, notebook: Scientific Track/team/"],
+               "All code, data and notebook: https://github.com/BenjaminKaganovitch/qsite-2026-open-challenge"],
               text_box=(0.05, 0.12, 0.9, 0.7), fs=16)
     print("wrote", OUT / "slides.pdf")
 
