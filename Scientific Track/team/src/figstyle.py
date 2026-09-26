@@ -10,9 +10,9 @@ PHASE_COLORS = ["#2a78d6", "#eb6834", "#1baf7a", "#b9b8b3"]  # ferro, antiphase,
 PHASE_CMAP = ListedColormap(PHASE_COLORS)
 PHASE_NORM = BoundaryNorm([-0.5, 0.5, 1.5, 2.5, 3.5], 4)
 INK, INK2 = "#0b0b0b", "#52514e"
-plt.rcParams.update({"font.size": 9, "axes.edgecolor": INK2, "axes.labelcolor": INK, "xtick.color": INK2,
+plt.rcParams.update({"font.size": 12, "axes.edgecolor": INK2, "axes.labelcolor": INK, "xtick.color": INK2,
                      "ytick.color": INK2, "axes.spines.top": False, "axes.spines.right": False,
-                     "figure.dpi": 150, "savefig.bbox": "tight", "axes.titlesize": 9.5})
+                     "figure.dpi": 150, "savefig.bbox": "tight", "axes.titlesize": 12.5, "legend.fontsize": 10, "xtick.labelsize": 11, "ytick.labelsize": 11, "axes.labelsize": 12.5})
 
 
 def overlays(ax, lw=1.2, legend=True, pe=True):
@@ -25,7 +25,7 @@ def overlays(ax, lw=1.2, legend=True, pe=True):
         ax.plot(kk, ac.h_peschel_emery(kk), color=INK2, lw=0.8, ls="-.", label="Peschel-Emery disorder line")
     ax.set_xlim(0, 1); ax.set_ylim(0, 2)
     if legend:
-        ax.legend(loc="upper left", fontsize=6.5, frameon=False)
+        ax.legend(loc="upper left", fontsize=9.4, frameon=False)
 
 
 def phase_map(ax, K, H, lab, amb=None, title="", mod=None):
@@ -44,4 +44,4 @@ def phase_legend(fig, loc="lower center", ncol=4, extra=(), y=0.0):
     from matplotlib.patches import Patch
     names = ["ferro", "antiphase", "paramagnet", "unpolarised (order & m_x low)"]
     h = [Patch(color=c, label=n) for c, n in zip(PHASE_COLORS, names)] + list(extra)
-    fig.legend(handles=h, loc=loc, ncol=ncol, fontsize=7, frameon=False, bbox_to_anchor=(0.5, y))
+    fig.legend(handles=h, loc=loc, ncol=ncol, fontsize=10.2, frameon=False, bbox_to_anchor=(0.5, y))

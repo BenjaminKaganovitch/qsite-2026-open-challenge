@@ -53,9 +53,9 @@ def main():
     lab_ed_R = pa.classify_ratio(OFe, OAe, ed["mx"])
     for p in PS:
         res[p]["labR"] = pa.classify_ratio(res[p]["OF"], res[p]["OA"], res[p]["mx"])
-        fig, axs = plt.subplots(1, 2, figsize=(8.6, 3.9), sharey=True)
-        fs.phase_map(axs[0], K, H, res[p]["lab"], res[p]["amb"], f"(a) fixed clean-ED thresholds, p={p}")
-        fs.phase_map(axs[1], K, H, res[p]["labR"], None, f"(b) relative dominance argmax(O_F,O_A,m_x²), p={p}")
+        fig, axs = plt.subplots(1, 2, figsize=(9.2, 4.6), sharey=True)
+        fs.phase_map(axs[0], K, H, res[p]["lab"], res[p]["amb"], "(a) fixed clean-ED thresholds")
+        fs.phase_map(axs[1], K, H, res[p]["labR"], None, "(b) relative dominance argmax(O_F, O_A, m_x²)")
         for ax in axs:
             ax.scatter(KK[bad], HH[bad], s=7, marker="s", facecolors="none", edgecolors="#6b1d8a", lw=0.6)
             fs.overlays(ax, pe=False, legend=(ax is axs[0]))
@@ -64,15 +64,15 @@ def main():
         if weak.any():
             axs[1].scatter(KK[weak], HH[weak], s=2, marker=".", color="#0b0b0b", lw=0)
         axs[1].set_ylabel("")
-        fig.suptitle(f"HVA circuit N=8 PBC, L=4 ({NCH} CNOTs, {NCH} target channels), p={p}", fontsize=9.5)
+        fig.suptitle(f"HVA circuit, N=8 PBC, L=4 ({NCH} CNOTs, {NCH} target channels), p = {p}", fontsize=13.8, y=0.995)
         fs.phase_legend(fig, ncol=4, y=0.06)
         fig.text(0.5, 0.01, "Fixed clean-optimised parameters for all p. Purple squares: clean preparation fidelity < 0.9. "
-                 "x: label changes for thresholds ±0.1. Black dots in (b): largest signal < 0.05.", ha="center", fontsize=6.5)
-        fig.subplots_adjust(bottom=0.27, wspace=0.08)
+                 "x: label changes for thresholds ±0.1. Black dots in (b): largest signal < 0.05.", ha="center", fontsize=9.4)
+        fig.subplots_adjust(bottom=0.25, top=0.86, wspace=0.08)
         fig.savefig(FIG / f"phase_diagram_p{p}.png"); fig.savefig(FIG / f"phase_diagram_p{p}.pdf"); plt.close(fig)
-    fig, axs = plt.subplots(1, 4, figsize=(14, 3.6), sharey=True)
+    fig, axs = plt.subplots(1, 4, figsize=(14, 3.9), sharey=True)
     lab_ed_amb = pa.ambiguity(OFe, OAe, ed["mx"], T, Tx)
-    fs.phase_map(axs[0], K, H, lab_ed, lab_ed_amb, "Exact ground states (ED), independent reference")
+    fs.phase_map(axs[0], K, H, lab_ed, lab_ed_amb, "Exact ground states (ED)")
     for ax, p in zip(axs[1:], PS):
         fs.phase_map(ax, K, H, res[p]["lab"], res[p]["amb"], f"HVA circuit, p={p}")
         ax.scatter(KK[bad], HH[bad], s=6, marker="s", facecolors="none", edgecolors="#6b1d8a", lw=0.5)
@@ -94,7 +94,7 @@ def main():
                               ["log10 relative energy error", "1 − ground-subspace/manifold fidelity", "max_q |S_circ(q) − S_ED(q)|", "label disagreement (circuit p=0 vs ED)"],
                               [dict(cmap="magma_r", vmin=-7, vmax=-1), dict(cmap="magma_r", vmin=0, vmax=1), dict(cmap="magma_r", vmin=0, vmax=1), dict(cmap="Greys", vmin=0, vmax=1)]):
         im = ax.imshow(arr.T, origin="lower", extent=ext, aspect="auto", **kw)
-        fs.overlays(ax, lw=0.7, legend=False, pe=False); ax.set_title(t, fontsize=8); ax.set_xlabel("κ")
+        fs.overlays(ax, lw=0.7, legend=False, pe=False); ax.set_title(t, fontsize=11.6); ax.set_xlabel("κ")
         fig.colorbar(im, ax=ax, fraction=0.046)
     axs[0].set_ylabel("h")
     fig.savefig(FIG / "fig_circuit_vs_ed.png"); plt.close(fig)
@@ -167,7 +167,7 @@ def main():
         axs[0, j].axhline(T, color="#999", lw=0.7, ls=":")
         axs[0, j].set_title(f"κ={K[i]:.2f}: {'O_F' if ph == 0 else 'O_A'}")
         axs[1, j].set_title(f"κ={K[i]:.2f}: m_x"); axs[1, j].set_xlabel("h")
-    axs[0, 0].legend(fontsize=6, frameon=False)
+    axs[0, 0].legend(fontsize=8.7, frameon=False)
     fig.tight_layout(); fig.savefig(FIG / "fig_noise_cuts.png"); plt.close(fig)
     # ---------------- contraction map vs terminal benchmark
     fig, axs = plt.subplots(1, 2, figsize=(8.5, 3.0))
@@ -178,7 +178,7 @@ def main():
         R = np.where(s0 - 1 > 0.2, (sp - 1) / (s0 - 1), np.nan)
         im = ax.imshow(R.T, origin="lower", extent=ext, aspect="auto", cmap="viridis", vmin=0, vmax=1)
         a = 1 - 4 * p / 3
-        ax.set_title(f"(S_p(q*)−1)/(S_0(q*)−1), p={p}\nterminal ref. a²={a**2:.3f} per layer of hits", fontsize=8)
+        ax.set_title(f"(S_p(q*)−1)/(S_0(q*)−1), p={p}\nterminal ref. a²={a**2:.3f} per layer of hits", fontsize=11.6)
         fs.overlays(ax, lw=0.7, legend=False, pe=False); ax.set_xlabel("κ")
         fig.colorbar(im, ax=ax, fraction=0.046)
     axs[0].set_ylabel("h"); fig.savefig(FIG / "fig_contraction.png"); plt.close(fig)

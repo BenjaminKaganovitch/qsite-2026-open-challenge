@@ -56,7 +56,7 @@ def main():
         ax.plot(K, b["h_D"], "o-", color=COL[n], ms=3, lw=1.2, label=f"N={n} max|dO/dh|")
         ax.plot(K, hF, "x:", color=COL[n], ms=4, lw=0.8, label=f"N={n} χ_F peak")
     fs.overlays(ax, legend=False, pe=False)
-    ax.legend(fontsize=6.3, frameon=False, ncol=2, loc="upper center")
+    ax.legend(fontsize=9.1, frameon=False, ncol=2, loc="upper center")
     ax.set_title("Clean ED finite-ring boundary estimators (δh=0.005)"); ax.set_xlabel("κ"); ax.set_ylabel("h")
     fig.savefig(FIG / "fig_finite_size_boundaries.png"); plt.close(fig)
     ref = {"kappa": out.get(8, {}).get("kappa"), "h_ising": None}
@@ -92,10 +92,10 @@ def main():
             a.axvline(float(ac.h_pt_lower(kv)), color="k", ls="--", lw=0.8)
             a.axvline(float(ac.h_kt_upper(kv)), color="k", ls=":", lw=0.8)
             a.set_xlim(0, 1.5)
-        axs[row, 0].legend(fontsize=7, frameon=False)
+        axs[row, 0].legend(fontsize=10.2, frameon=False)
     for a in axs[1]:
         a.set_xlabel("h")
-    fig.suptitle("Floating-phase test cuts (dashed: lower PT fit, dotted: upper KT fit)", fontsize=9)
+    fig.suptitle("Floating-phase test cuts (dashed: lower PT fit, dotted: upper KT fit)", fontsize=13.0)
     fig.tight_layout(); fig.savefig(FIG / "fig_floating_cuts.png"); plt.close(fig)
     pa.save_json(AN / "floating_evidence.json", ev)
     print(json.dumps({n: {k: np.round(v, 3).tolist() for k, v in o.items() if k != "kappa"} for n, o in out.items()}, indent=0)[:3000])

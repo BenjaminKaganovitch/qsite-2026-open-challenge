@@ -136,7 +136,7 @@ def main():
         ax.plot(k, [r[f"dh_after_ZNE_R3_p{p}"] for r in rows], "^-", color="#1baf7a", ms=3, label="after ZNE (R3)")
         ax.plot(k, [r[f"dh_parity_verified_p{p}"] for r in rows], "v:", color="#4a3aa7", ms=3, label="parity verified")
         ax.set_title(f"threshold-crossing shift vs clean circuit, p={p}"); ax.set_xlabel("κ"); ax.set_ylabel("δh")
-    axs[0].legend(fontsize=6.5, frameon=False)
+    axs[0].legend(fontsize=9.4, frameon=False)
     fig.tight_layout(); fig.savefig(FIG / "fig_shift_prediction.png"); plt.close(fig)
     print(json.dumps(report, indent=1))
     for r in rows:

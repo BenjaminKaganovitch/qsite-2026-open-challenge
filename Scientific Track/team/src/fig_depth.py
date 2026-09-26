@@ -35,14 +35,14 @@ def main():
                 hD = pa._deriv_peak(H, y)
                 out[f"kappa{kv:.3f}_L{L}_p{p}"] = {"mean_abs_order_err_vs_ED": err, "h_D": hD, "h_D_ED": pa._deriv_peak(H, ye),
                                                    "cnots": 4 * N * L}
-        axs[0, c].set_title(f"κ={kv:.2f}: {'O_F' if ph == 0 else 'O_A'} (solid p=0, dashed p=0.01)"); axs[0, c].set_xlabel("h")
+        axs[0, c].set_title(f"κ = {kv:.2f}: {'O_F' if ph == 0 else 'O_A'}", fontsize=12); axs[0, c].set_xlabel("h")
         for p, mk in zip(PS, ("o", "s", "^")):
             e = [out[f"kappa{kv:.3f}_L{L}_p{p}"]["mean_abs_order_err_vs_ED"] for L in (1, 2, 3, 4)]
             axs[1, c].plot([1, 2, 3, 4], e, marker=mk, lw=1.2, label=f"p={p}", color=["#0b0b0b", "#eb6834", "#1baf7a"][PS.index(p)])
         axs[1, c].set_xlabel("HVA layers L (32 CNOTs per layer)"); axs[1, c].set_ylabel("mean |O_circ − O_ED| over h")
         axs[1, c].set_xticks([1, 2, 3, 4])
-    axs[0, 0].legend(fontsize=6, frameon=False, ncol=2); axs[1, 0].legend(fontsize=7, frameon=False)
-    fig.suptitle("Depth trade-off (fixed clean-optimised parameters): preparation error falls with L, noise error rises", fontsize=9.5)
+    axs[0, 0].legend(fontsize=8.7, frameon=False, ncol=2); axs[1, 0].legend(fontsize=10.2, frameon=False)
+    fig.suptitle("Depth trade-off (fixed clean-optimised parameters): solid p = 0, dashed p = 0.01", fontsize=13.8)
     fig.tight_layout(); fig.savefig(FIG / "fig_depth_tradeoff.png"); plt.close(fig)
     best = {}
     for r in ROWS:

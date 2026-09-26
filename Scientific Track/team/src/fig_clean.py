@@ -45,7 +45,7 @@ def main():
         fs.overlays(ax, lw=0.8, legend=False, pe=False); ax.set_title(t); ax.set_xlabel("κ")
         fig.colorbar(im, ax=ax, fraction=0.046)
     axs[0].set_ylabel("h")
-    fig.suptitle("Clean ED raw diagnostics, N=8 PBC (overlays: Ising solid, PT dashed, KT dotted)", fontsize=9)
+    fig.suptitle("Clean ED raw diagnostics, N=8 PBC (overlays: Ising solid, PT dashed, KT dotted)", fontsize=13.0)
     fig.savefig(FIG / "fig_ed_observables_N8.png"); plt.close(fig)
     # --- threshold sensitivity
     bd = {}
@@ -56,7 +56,7 @@ def main():
     for i, (t, hb) in enumerate(bd.items()):
         ax.plot(K, hb, marker="o", ms=2.5, lw=1, label=f"T={t}", color=plt.cm.viridis(i / 4))
     fs.overlays(ax, legend=False)
-    ax.legend(fontsize=6.5, frameon=False, loc="upper center", ncol=3)
+    ax.legend(fontsize=9.4, frameon=False, loc="upper center", ncol=3)
     ax.set_title("ED N=8: order-threshold crossing h_T(κ) vs threshold"); ax.set_xlabel("κ"); ax.set_ylabel("h")
     fig.savefig(FIG / "fig_ed_threshold_sensitivity_N8.png"); plt.close(fig)
     # --- ED fidelity / gap / entropy on the grid for three cuts
@@ -74,7 +74,7 @@ def main():
     axs[0].set_title("fidelity susceptibility χ_F/N (δh=1/15)"); axs[1].set_title("gap: E1−E0 (dotted), same-parity gap (solid)")
     axs[2].set_title("half-chain entanglement entropy S_{N/2}")
     for ax in axs:
-        ax.set_xlabel("h"); ax.legend(fontsize=7, frameon=False)
+        ax.set_xlabel("h"); ax.legend(fontsize=10.2, frameon=False)
     fig.savefig(FIG / "fig_ed_cuts_N8.png"); plt.close(fig)
     print(json.dumps(cal, indent=1))
     frac = {pa.LABELS[i]: int((lab == i).sum()) for i in range(4)}

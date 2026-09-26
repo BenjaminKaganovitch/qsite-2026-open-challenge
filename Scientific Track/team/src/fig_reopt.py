@@ -36,8 +36,8 @@ def main():
                             "mx_fixed": fx[f"p{p}_mx"][idx].tolist(), "mx_reopt": z[f"p{p}_mx"].tolist()}
         ax.set_title(f"κ={kv:.2f}: {'O_F' if ph == 0 else 'O_A'}"); ax.set_xlabel("h")
         out[str(r)] = rec
-    axs[0, 0].legend(fontsize=6, frameon=False)
-    fig.suptitle("Noise-aware re-optimisation (min Tr Hρ_p) vs fixed clean parameters, HVA L=4", fontsize=9)
+    axs[0, 0].legend(fontsize=8.7, frameon=False)
+    fig.suptitle("Noise-aware re-optimisation (min Tr Hρ_p) vs fixed clean parameters, HVA L=4", fontsize=13.0)
     fig.tight_layout(); fig.savefig(FIG / "fig_reopt.png"); plt.close(fig)
     pa.save_json(AN / "reopt_vs_fixed.json", out)
     for r, v in out.items():
