@@ -1,0 +1,75 @@
+{
+ "p0.01": {
+  "scale_points": [
+   0.01,
+   0.02
+  ],
+  "label_agreement_with_clean_circuit": 0.9947970863683663,
+  "label_agreement_with_ED": 0.9833506763787722,
+  "median_abs_dCij_per_point_mean": 0.004375336474081689,
+  "median_abs_dCij_all_elements": 0.0031013000962047815,
+  "median_abs_dmx": 0.003415017569570855,
+  "raw_median_abs_dCij_per_point_mean": 0.06255931073026226,
+  "raw_median_abs_dmx": 0.2588388903648048,
+  "fraction_Cij_exponential": 0.9867697339081314,
+  "fraction_mx_exponential": 0.9979188345473465,
+  "variance_amplification_median_4r2_plus_r4": 18.49999092271781,
+  "variance_amplification_p90": 49.22095189997378,
+  "label_counts": [
+   140,
+   137,
+   678,
+   6
+  ]
+ },
+ "p0.05": {
+  "scale_points": [
+   0.05,
+   0.1
+  ],
+  "label_agreement_with_clean_circuit": 0.9750260145681582,
+  "label_agreement_with_ED": 0.963579604578564,
+  "median_abs_dCij_per_point_mean": 0.06187194959003654,
+  "median_abs_dCij_all_elements": 0.05238591005676969,
+  "median_abs_dmx": 0.08917360782255956,
+  "raw_median_abs_dCij_per_point_mean": 0.15447505409040554,
+  "raw_median_abs_dmx": 0.7114452529130073,
+  "fraction_Cij_exponential": 0.9769213616768248,
+  "fraction_mx_exponential": 0.9958376690946931,
+  "variance_amplification_median_4r2_plus_r4": 54922.45180597775,
+  "variance_amplification_p90": 7903490.360247878,
+  "label_counts": [
+   130,
+   144,
+   679,
+   8
+  ]
+ },
+ "boundaries_p0.05": {
+  "kappa_0.200": {
+   "order": "ferro",
+   "h_T_clean_circuit": 0.6846754446657589,
+   "h_T_expZNE_p0.05": 0.5893313289889659,
+   "shift": -0.09534411567679302
+  },
+  "kappa_0.300": {
+   "order": "ferro",
+   "h_T_clean_circuit": 0.4712913323790298,
+   "h_T_expZNE_p0.05": 0.46443485439335186,
+   "shift": -0.006856477985677956
+  },
+  "kappa_0.800": {
+   "order": "antiphase",
+   "h_T_clean_circuit": 0.6742833088715903,
+   "h_T_expZNE_p0.05": 0.6751064904531175,
+   "shift": 0.0008231815815272769
+  },
+  "kappa_0.900": {
+   "order": "antiphase",
+   "h_T_clean_circuit": 0.8129150002180673,
+   "h_T_expZNE_p0.05": 0.8385028279680612,
+   "shift": 0.025587827749993908
+  }
+ },
+ "method": "two-point exponential extrapolation C0=C1^2/C2 (same sign) else 2C1-C2, lambda=1,2 (p, 2p) from noisy_hva and noisy_extras; applied to each C_ij and to m_x; S(q) rebuilt before classifying with the fixed clean-ED thresholds; variance amplification 4r^2+r^4, r=C(p)/C(2p)"
+}

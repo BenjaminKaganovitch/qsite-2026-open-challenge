@@ -30,6 +30,69 @@ def richardson(vals, c):
     return sum(gi * v for gi, v in zip(g, vals)), g
 
 
+def exp_zne(v1, v2):
+    """Two-point exponential extrapolation (lambda = 1, 2): v0 = v1^2/v2 where v1, v2 have the same
+    sign (and v2 != 0), else the linear Richardson value 2 v1 - v2. Returns (v0, used_exp mask, r=v1/v2)."""
+    v1 = np.asarray(v1, float); v2 = np.asarray(v2, float)
+    same = (v1 * v2 > 0)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        r = np.where(same, v1 / v2, np.nan)
+        v0 = np.where(same, v1 ** 2 / v2, 2 * v1 - v2)
+    return v0, same, r
+
+
+def exponential_zne_report(nz, ex, ed, T, Tx, K, H):
+    """Exponential ZNE at p = 0.01 and 0.05 (lambda = 1, 2; p=0 truth held out)."""
+    OFe, OAe = pa.orders(ed["Sq"], N)
+    lab_ed = pa.classify(OFe, OAe, ed["mx"], T, Tx)
+    C0, x0 = nz["p0.0_Cij"], nz["p0.0_mx"]
+    lab_clean = pa.classify(*pa.orders(sq_from_cij(C0), N), x0, T, Tx)
+    off = ~np.eye(N, dtype=bool)
+    out, mitig = {}, {}
+    for p, k2 in ((0.01, "lin_0.02"), (0.05, "lin_0.1")):
+        C1, C2 = nz[f"p{p}_Cij"], ex[f"{k2}_Cij"]
+        Cm, same, r = exp_zne(C1, C2)
+        xm, samex, rx = exp_zne(nz[f"p{p}_mx"], ex[f"{k2}_mx"])
+        Sm = sq_from_cij(Cm)
+        OF, OA = pa.orders(Sm, N)
+        lab = pa.classify(OF, OA, xm, T, Tx)
+        rr = r[..., off][same[..., off]]
+        amp = 4 * rr ** 2 + rr ** 4
+        dC_elem = np.abs(Cm - C0)[..., off]
+        out[f"p{p}"] = {
+            "scale_points": [p, 2 * p],
+            "label_agreement_with_clean_circuit": float(np.mean(lab == lab_clean)),
+            "label_agreement_with_ED": float(np.mean(lab == lab_ed)),
+            "median_abs_dCij_per_point_mean": float(np.median(dC_elem.mean(-1))),
+            "median_abs_dCij_all_elements": float(np.median(dC_elem)),
+            "median_abs_dmx": float(np.median(np.abs(xm - x0))),
+            "raw_median_abs_dCij_per_point_mean": float(np.median(np.abs(C1 - C0)[..., off].mean(-1))),
+            "raw_median_abs_dmx": float(np.median(np.abs(nz[f"p{p}_mx"] - x0))),
+            "fraction_Cij_exponential": float(same[..., off].mean()),
+            "fraction_mx_exponential": float(samex.mean()),
+            "variance_amplification_median_4r2_plus_r4": float(np.median(amp)),
+            "variance_amplification_p90": float(np.percentile(amp, 90)),
+            "label_counts": [int((lab == i).sum()) for i in range(4)],
+        }
+        mitig[p] = dict(OF=OF, OA=OA, mx=xm, lab=lab)
+    # threshold boundaries after exponential ZNE at p = 0.05
+    OFc, OAc = pa.orders(sq_from_cij(C0), N)
+    bnd = {}
+    for kv in (0.2, 0.3, 0.8, 0.9):
+        i = int(np.argmin(np.abs(K - kv)))
+        ph = 0 if OFc[i, 0] >= OAc[i, 0] else 1
+        yc = (OFc, OAc)[ph][i]; ye = (mitig[0.05]["OF"], mitig[0.05]["OA"])[ph][i]
+        hc, he = pa._crossing(H, yc, T), pa._crossing(H, ye, T)
+        bnd[f"kappa_{K[i]:.3f}"] = {"order": ["ferro", "antiphase"][ph], "h_T_clean_circuit": hc,
+                                    "h_T_expZNE_p0.05": he, "shift": he - hc}
+    out["boundaries_p0.05"] = bnd
+    out["method"] = ("two-point exponential extrapolation C0=C1^2/C2 (same sign) else 2C1-C2, lambda=1,2 "
+                     "(p, 2p) from noisy_hva and noisy_extras; applied to each C_ij and to m_x; S(q) rebuilt "
+                     "before classifying with the fixed clean-ED thresholds; variance amplification 4r^2+r^4, r=C(p)/C(2p)")
+    pa.save_json(AN / "zne_exponential.json", out)
+    return out, mitig
+
+
 def main():
     cal, ed, vq, nz, ex = load_all()
     assert ex is not None, "extras scan required"
@@ -112,13 +175,18 @@ def main():
         for r in rows:
             w.writerow({k: f"{v:.4f}" for k, v in r.items()})
     pa.save_json(AN / "mitigation_summary_N8_L4.json", report)
+    expo, expm = exponential_zne_report(nz, ex, ed, T, Tx, K, H)
+    print(json.dumps(expo, indent=1))
     # figures: mitigated diagrams
-    fig, axs = plt.subplots(1, 4, figsize=(14, 3.6), sharey=True)
+    fig, axs = plt.subplots(1, 5, figsize=(17.5, 3.6), sharey=True)
     KK, HH = np.meshgrid(K, H, indexing="ij")
     for ax, (key, title) in zip(axs, [("raw0.05", "raw p=0.05"), ("p0.05_lin_R3", "ZNE (linear p, λ=1,2,3) p=0.05"),
-                                        ("ver0.05", "parity-verified p=0.05"), ("p0.01_lin_R3", "ZNE (linear p, λ=1,2,3) p=0.01")]):
+                                        ("ver0.05", "parity-verified p=0.05"), ("p0.01_lin_R3", "ZNE (linear p, λ=1,2,3) p=0.01"),
+                                        ("exp0.05", "exp. ZNE, p=0.05")]):
         if key == "raw0.05":
             lab = pa.classify(*pa.orders(nz["p0.05_Sq"], N), nz["p0.05_mx"], T, Tx)
+        elif key == "exp0.05":
+            lab = expm[0.05]["lab"]
         elif key == "ver0.05":
             lab = pa.classify(*pa.orders(nz["p0.05_Sq_ver"], N), nz["p0.05_mx_ver"], T, Tx)
         else:
